@@ -10,25 +10,25 @@
 \brief
     This file contains the implementation of the following functions for
     the memory manager assignment.
-	
-	Functions include:
-	- Constructor          
+    
+    Functions include:
+    - Constructor          
     - Allocate
     - Free
-	- ImplementedExtraCredit *NOT IMPLEMENTED*
-	- DumpMemoryInUse
-	- ValidatePages
-	- FreeEmptyPages *NOT IMPLEMENTED*
-	- SetDebugState
-	- GetFreeList
-	- GetPageList
-	- GetConfig
-	- GetStats
-	- DeAllocatePages
-	- AllocatePage
-	- ValidateObject
-	- ValidateBlock
-	- SetSignatures
+    - ImplementedExtraCredit *NOT IMPLEMENTED*
+    - DumpMemoryInUse
+    - ValidatePages
+    - FreeEmptyPages *NOT IMPLEMENTED*
+    - SetDebugState
+    - GetFreeList
+    - GetPageList
+    - GetConfig
+    - GetStats
+    - DeAllocatePages
+    - AllocatePage
+    - ValidateObject
+    - ValidateBlock
+    - SetSignatures
        
 
   Hours spent on this assignment: 14
@@ -190,24 +190,24 @@ class ObjectAllocator
     OAConfig Config_;            // configuration parameters
     OAStats OAStats_;            // accumulating statistics
     
-	GenericObject* page_list_;  //Pagelist/freelist pointers
-	GenericObject* free_list_;
-	
-	
-	unsigned block_size_;       //size of each block
-	unsigned chunk_size_;
-	
+    GenericObject* page_list_;  //Pagelist/freelist pointers
+    GenericObject* free_list_;
+    
+    
+    unsigned block_size_;       //size of each block
+    unsigned chunk_size_;
+    
       // Make private to prevent copy construction and assignment
     ObjectAllocator(const ObjectAllocator &oa);
     ObjectAllocator &operator=(const ObjectAllocator &oa);
     
-	void AllocatePage();   //allcoates/prepares a page for the client
-	void DeAllocatePages();//frees all memory allocated
-	
-	void ValidateObject(void* Object); //validate that the pointer given is valid
-	bool ValidateBlock(unsigned char* block) const;  //validate a block to see if it is corrupted
-	void SetSignatures(char * set_signatures);//set the initial signatures for each page
-	
+    void AllocatePage();   //allcoates/prepares a page for the client
+    void DeAllocatePages();//frees all memory allocated
+    
+    void ValidateObject(void* Object); //validate that the pointer given is valid
+    bool ValidateBlock(unsigned char* block) const;  //validate a block to see if it is corrupted
+    void SetSignatures(char * set_signatures);//set the initial signatures for each page
+    
 
 };
 
